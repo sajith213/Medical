@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: right;
+}
+
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top:10px;
+}
+
+.form-container {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important */
+}
+
+.btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #0779e4;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    header ul {
+        float: none;
+        text-align: center;
+    }
+    header li {
+        display: block;
+        padding: 10px;
+    }
+    .form-container {
+        width: 90%;
+    }
+}
+
+/* Add to existing style.css */
+.claims-list, .claims-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+.claims-list th, .claims-list td,
+.claims-table th, .claims-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.claims-list th, .claims-table th {
+    background-color: #f2f2f2;
+}
+.claims-list tr:nth-child(even){background-color: #f9f9f9;}
+.claims-list tr:hover {background-color: #ddd;}
+.claims-table tr:nth-child(even) td:nth-child(odd),
+.claims-table tr:nth-child(odd) td:nth-child(even) {
+    background-color: #f9f9f9; /* Banded rows for readability */
+}
+
+
+.status-Submitted { color: #007bff; font-weight: bold; }
+.status-UnderReview { color: #ffc107; font-weight: bold; }
+.status-Approved { color: #28a745; font-weight: bold; }
+.status-Rejected { color: #dc3545; font-weight: bold; }
+.status-NeedsInformation { color: #fd7e14; font-weight: bold; }
+
+.action-links a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+.action-links a.edit-link { color: #17a2b8; }
+.action-links a.delete-link { color: #dc3545; }
+.action-links a.view-link { color: #007bff; }
+
+.claim-details-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Label and value */
+    gap: 10px 20px; /* Row and column gap */
+    margin-bottom: 20px;
+}
+.claim-details-grid dt {
+    font-weight: bold;
+    text-align: right;
+}
+.claim-details-grid dd {
+    margin-left: 0; /* Reset default dd margin */
+}
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.badge-Submitted { background-color: #007bff; color: white; }
+.badge-UnderReview { background-color: #ffc107; color: black; }
+.badge-Approved { background-color: #28a745; color: white; }
+.badge-Rejected { background-color: #dc3545; color: white; }
+.badge-NeedsInformation { background-color: #fd7e14; color: white; }

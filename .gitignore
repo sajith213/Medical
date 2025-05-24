@@ -1,0 +1,32 @@
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Dependencies (if using Composer later)
+/vendor/
+
+# Log files
+logs/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Uploaded files (if sensitive and handled by a proper backup strategy)
+#uploads/*
+# Important: If uploads are not backed up elsewhere, do NOT ignore them.
+# For now, let's assume they should be versioned if small, or backed up separately.
+# If they contain sensitive PII and are stored encrypted, ignoring them from git might be a good idea
+# if the repo is public/less secure than the file storage.
+# For this project, let's start by NOT ignoring them, assuming the repo is private.
+
+# Configuration files that might contain secrets (if not using environment variables)
+# Consider a config.local.php for overriding sensitive settings, and add that to gitignore.
+# For now, config.php is included as it has placeholders.
+
+# Build artifacts
+/build/
+/dist/

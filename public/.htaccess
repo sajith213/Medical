@@ -1,0 +1,24 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Deny access to sensitive directories
+RewriteRule ^(config|db|src|templates|uploads|logs)/ - [F,L]
+
+# Redirect all requests to index.php unless it's an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+<Files ".env">
+    Require all denied
+</Files>
+<Files "error_log">
+    Require all denied
+</Files>
+<Files "composer.json">
+    Require all denied
+</Files>
+<Files "composer.lock">
+    Require all denied
+</Files>
