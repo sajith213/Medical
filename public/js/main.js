@@ -199,4 +199,25 @@ $(document).ready(function() {
         }
     });
 
+    // --- Admin Edit User Form Validation ---
+    $('#adminEditUserForm').submit(function(e) {
+        let errors = [];
+        const username = $('#username').val().trim();
+        const email = $('#email').val().trim();
+        const full_name = $('#full_name').val().trim();
+        const role_id = $('#role_id').val();
+
+        if (username.length < 3) errors.push("Username must be at least 3 characters long.");
+        if (!isValidEmail(email)) errors.push("Invalid email address."); // Assumes isValidEmail function exists
+        if (full_name === "") errors.push("Full name is required.");
+        if (role_id === "" || role_id === null) errors.push("A role must be selected.");
+
+        if (errors.length > 0) {
+            e.preventDefault();
+            displayValidationErrors(errors, $('#adminEditUserForm .form-messages')); // Assumes displayValidationErrors function exists
+            return false;
+        }
+        $('#adminEditUserForm .form-messages').empty().hide();
+        return true;
+    });
 });

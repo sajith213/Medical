@@ -43,6 +43,7 @@ require_once dirname(dirname(__DIR__)) . '/config/config.php';
                         
                         <?php if (hasRole('Admin')): ?>
                             <li><a href="<?php echo BASE_URL; ?>/admin_users.php">Manage Users</a></li>
+                            <li><a href="<?php echo BASE_URL; ?>/admin_config.php">System Configuration</a></li>
                         <?php endif; ?>
                         
                         <li><a href="<?php echo BASE_URL; ?>/logout.php">Logout</a></li>

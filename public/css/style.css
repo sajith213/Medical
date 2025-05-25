@@ -79,13 +79,27 @@ nav {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"],
-.form-group select {
-    width: 100%;
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Already there, ensure box-sizing is also set */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* Important */
+    box-sizing: border-box; /* Crucial for width: 100% and padding */
+    margin-top: 5px; /* Add some space between label and input if label is block */
 }
+
+/* More distinct focus style for inputs */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: none;
+}
+
 
 .btn {
     display: inline-block;
@@ -96,18 +110,28 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    margin-right: 5px; /* Add some spacing if buttons are next to each other */
 }
 
 .btn:hover {
-    background: #0779e4;
+    background: #0779e4; /* This was a custom color, will keep for default .btn */
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #007bff; /* Bootstrap primary */
 }
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+.btn-secondary { /* Example for cancel buttons */
+    background-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
 
 .alert {
     padding: 15px;
@@ -157,6 +181,7 @@ nav {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    vertical-align: middle; /* Better for cells with varying content height */
 }
 .claims-list th, .claims-table th {
     background-color: #f2f2f2;
@@ -212,3 +237,57 @@ nav {
 .badge-Approved { background-color: #28a745; color: white; }
 .badge-Rejected { background-color: #dc3545; color: white; }
 .badge-NeedsInformation { background-color: #fd7e14; color: white; }
+
+/* Basic Pagination Styling (Placeholder) */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.pagination a:hover {
+    background-color: #e9ecef;
+}
+.pagination .current {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.pagination .disabled {
+    color: #6c757d;
+    pointer-events: none;
+    border-color: #ddd;
+}
+
+/* Utility class for visually hidden labels if needed for accessibility with custom controls */
+.sr-only { 
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Improve fieldset/legend styling */
+fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 1.1em;
+    color: #333;
+}
